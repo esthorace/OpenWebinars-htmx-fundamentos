@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenWebinars</title>
+    <!-- htmx -->
+    <script src="../../assets/htmx.min.js"></script>
+    <!-- Milligram -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+    <style>
+        body {
+            margin: 1%;
+            text-align: center;
+        }
+
+        .azul {
+            background-color: skyblue;
+            color: white
+        }
+    </style>
+</head>
+
+<body>
+    <h1>hx-target</h1>
+
+    <button hx-get="p.html" hx-target="this">this</button>
+    <p>🤔</p>
+
+    <button hx-get="p.html" hx-target="next">next</button>
+    <p>🤔</p>
+
+    <button hx-get="p.html" hx-target="previous">previous</button>
+    <p>🤔</p>
+
+    <!-- <button hx-get="p.html" hx-target="find tbody">find</button> -->
+    <div style="background-color: whitesmoke;" hx-get="p.html" hx-target="find tbody" hx-swap="beforeend">
+        <button>find</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tecnología</th>
+                    <th>Aplicación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>HTMX</td>
+                    <td>Desarrollo Web</td>
+                </tr>
+                <!-- <tr>
+                    <td>
+                        <button hx-get="p.html" hx-target="closest td">td</button>
+                        <button hx-get="p.html" hx-target="closest tr">tr</button>
+                        <button hx-get="p.html" hx-target="closest tbody">tbody</button>
+                        <button hx-get="p.html" hx-target="closest table">table</button>
+                        <button hx-get="p.html" hx-target="closest div">div</button>
+                        <button hx-get="p.html" hx-target="closest button">button</button>
+                    </td>
+                </tr> -->
+            </tbody>
+        </table>
+
+    </div>
+</body>
+
+</html>

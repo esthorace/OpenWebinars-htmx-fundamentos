@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenWebinars</title>
+    <!-- htmx -->
+    <script src="../../assets/htmx.min.js"></script>
+    <!-- Milligram -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+    <style>
+        body {
+            margin: 1%;
+            text-align: center;
+        }
+
+        .azul {
+            background-color: skyblue;
+            color: white
+        }
+    </style>
+</head>
+
+<body>
+    <h1>hx-target</h1>
+
+    <!-- id -->
+    <button hx-get="p.html" hx-target="#destino">✨id</button>
+    <div id="destino">Objetivo de la respuesta por id</div>
+
+    <!-- class -->
+    <button hx-get="p.html" hx-target=".azul">✨class</button>
+    <div class="azul">Objetivo de la respuesta por clase</div>
+
+    <!-- tag -->
+    <button hx-get="p.html" hx-target="p">✨tag</button>
+    <div style="background-color: whitesmoke;">
+        <p>Aquí se responderá anta la solicitud por tag</p>
+        <p>🤔</p>
+    </div>
+
+    <!-- multiple tag -->
+    <button hx-get="p.html" hx-target="article span">✨múltiples selectores</button>
+    <main><span>🤔</span></main>
+    <article><span>🤔</span></article>
+    <footer><span>🤔</span></footer>
+
+</body>
+
+</html>

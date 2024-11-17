@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenWebinars</title>
+    <!-- htmx -->
+    <script src="../../assets/htmx.min.js"></script>
+    <!-- Milligram -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+    <style>
+        body {
+            margin: 1%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>hx-get</h1>
+    <button hx-get="imagen.html" hx-target="#destino">Mostrar imagen</button>
+    <button hx-get="users.json" hx-target="#destino">Mostrar JSON</button>
+    <div id="destino">
+        Aquí se responderá ante la solicitud
+    </div>
+</body>
+
+</html>

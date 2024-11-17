@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>OpenWebinars</title>
+        <!-- htmx -->
+        <script src="../../assets/htmx.min.js"></script>
+        <!-- Milligram -->
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic" />
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css" />
+        <style>
+            body {
+                margin: 1%;
+                text-align: center;
+            }
+
+            .azul {
+                background-color: skyblue;
+                color: white;
+                height: 200px;
+                scroll-behavior: smooth;
+                overflow-y: scroll;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>hx-swap</h1>
+        <h2>Modificadores</h2>
+        <div>
+            <button hx-get="data.html"
+                    hx-target="#destino"
+                    hx-swap="swap:500ms ignoreTitle:true">innerHTML</button>
+        </div>
+        <div>
+            <button hx-get="data.html"
+                    hx-target="#destino"
+                    hx-swap="afterend show:bottom">show:bottom</button>
+            <button hx-get="data.html"
+                    hx-target="#destino"
+                    hx-swap="beforebegin show:top">show:top</button>
+        </div>
+        <div>
+            <button hx-get="data.html"
+                    hx-target="#destino"
+                    hx-swap="afterend show:window:bottom">show:window:bottom</button>
+            <button hx-get="data.html"
+                    hx-target="#destino"
+                    hx-swap="beforebegin show:window:top">show:window:top</button>
+        </div>
+        <div>
+            <button hx-get="data.html"
+                    hx-target="#destino"
+                    hx-swap="afterbegin scroll:top show:#destino:bottom">scroll:top</button>
+            <button hx-get="data.html"
+                    hx-target="#destino"
+                    hx-swap="beforeend scroll:bottom show:#destino:bottom">scroll:bottom</button>
+        </div>
+        <div id="destino" class="azul">✨CONTENIDO INICIAL✨</div>
+    </body>
+</html>

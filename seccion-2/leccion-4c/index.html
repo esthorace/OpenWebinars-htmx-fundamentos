@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>OpenWebinars</title>
+        <!-- htmx -->
+        <script src="../../assets/htmx.min.js"></script>
+        <!-- Milligram -->
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic" />
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css" />
+        <style>
+            body {
+                margin: 1%;
+                text-align: center;
+            }
+
+            .azul {
+                background: rgb(2, 0, 36);
+                color: white;
+                height: 200px;
+                scroll-behavior: smooth;
+                overflow-y: scroll;
+            }
+
+            .btn {
+                background-color: black;
+                color: white;
+                padding: 1em;
+                margin-inline: 25%;
+                margin-bottom: 1em;
+                cursor: pointer;
+                user-select: none;
+            }
+
+            .noticias {
+                position: fixed;
+                bottom: 0;
+                right: 0;
+                background-color: rgba(158, 17, 108, 0.493);
+                color: red;
+                width: 25%;
+                height: 10rem;
+                overflow-y: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>hx-trigger</h1>
+        <h3>from</h3>
+        <div hx-get="data.html"
+             hx-target="#destino"
+             hx-swap="beforeend scroll:bottom"
+             hx-trigger="change from:#opciones1">
+            <select id="opciones1">
+                <option value="opcion1">A</option>
+                <option value="opcion2">B</option>
+            </select>
+            <select id="opciones2">
+                <option value="opcion3">A</option>
+                <option value="opcion4">B</option>
+            </select>
+        </div>
+        <div id="destino" class="azul">✨CONTENIDO INICIAL✨</div>
+        <div hx-get="noticias.html"
+             hx-target=".noticias"
+             hx-swap="afterbegin scroll:top"
+             hx-trigger="every 3s"></div>
+        <div class="btn"
+             hx-get="video.html"
+             hx-target="this"
+             hx-swap="afterend"
+             hx-trigger="mouseenter once">Ver vídeo con mouseenter</div>
+        <div class="noticias">NOTICIAS</div>
+    </body>
+</html>
