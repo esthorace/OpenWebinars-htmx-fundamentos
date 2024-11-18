@@ -1,0 +1,34 @@
+<main>
+    <div class="area-imagen"
+         style="background-image: url('static/img/{{ area }}.webp')"></div>
+    <a href="/" hx-target="main" hx-swap="transition:true">⬅️</a>
+    <section class="flex-column-center">
+        <h1>Turnos para {{ area.upper() }}</h1>
+        <button hx-get="/{{ area }}/formulario"
+                hx-target="section"
+                hx-swap="transition:true">Agregar Nuevo Turno</button>
+        <table>
+            <tr>
+                <th>Paciente</th>
+                <th>Fecha y Hora</th>
+                <th>Acciones</th>
+            </tr>
+            {% for i, turno in enumerate(turnos) %}
+                <tr>
+                    <td>{{ turno.nombre }}</td>
+                    <td>{{ turno.fecha_hora | formatear_fecha }}</td>
+                    <td>
+                        <button hx-get="/{{ area }}/formulario/{{ i }}"
+                                hx-target="section"
+                                hx-swap="transition:true">Modificar</button>
+                        <button hx-delete="/{{ area }}/eliminar/{{ i }}"
+                                hx-target="main"
+                                hx-confirm="¿Estás seguro de eliminar este turno?">
+                            Eliminar
+                        </button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </section>
+</main>

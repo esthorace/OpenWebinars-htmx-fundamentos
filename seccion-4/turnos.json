@@ -1,0 +1,20 @@
+{
+    "pediatria": [
+        {
+            "nombre": "Agustina",
+            "fecha_hora": "2024-11-16T10:37"
+        },
+        {
+            "nombre": "Luc\u00eda",
+            "fecha_hora": "2025-06-12T05:37"
+        }
+    ],
+    "laboratorio": [
+        {
+            "nombre": "Juli\u00e1n",
+            "fecha_hora": "2024-11-21T05:38"
+        }
+    ],
+    "geriatria": [],
+    "fisioterapia": []
+}
