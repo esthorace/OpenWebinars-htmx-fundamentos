@@ -1,0 +1,82 @@
+h1,
+a {
+    color: white;
+    font-size: 6rem;
+    text-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.5);
+}
+
+p {
+    color: white;
+    font-size: 2rem;
+}
+
+.menu {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    view-transition-name: pantalla-completa;
+}
+
+.area {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.area-imagen {
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.5);
+    transition: all 0.5s ease
+}
+
+.area:hover .area-imagen {
+    transform: scale(1.3);
+    filter: blur(0.2rem)
+}
+
+.flex-column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes desaparecer {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+}
+
+::view-transition-old(pantalla-completa) {
+    animation: desaparecer 1s ease-out;
+}
+::view-transition-new(pantalla-completa){
+    animation: aparecer 600ms ease-in;
+}
+

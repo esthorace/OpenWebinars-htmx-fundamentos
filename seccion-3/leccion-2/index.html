@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>OpenWebinars</title>
+        <!-- htmx -->
+        <script src="../../assets/htmx.min.js"></script>
+        <!-- Milligram -->
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic" />
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css" />
+        <style>
+            body {
+                background-color: black;
+                color: white;
+                text-align: center;
+            }
+
+            .caja {
+                width: 50px;
+                height: 50px;
+                background-color: blue;
+                position: relative;
+                animation: mover 3s infinite;
+            }
+
+            @keyframes mover {
+                0% {
+                    left: 0;
+                }
+
+                50% {
+                    left: calc(100% - 50px);
+                }
+
+                100% {
+                    left: 0;
+                }
+            }
+
+            .btn {
+                background-color: rgb(7, 19, 69);
+                color: white;
+                padding: 1em;
+                margin-inline: 25%;
+                margin-bottom: 1em;
+                cursor: pointer;
+                user-select: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Animaciones con HTMX</h1>
+        <h3>hx-select</h3>
+        <header>
+            <div hx-get="cajas.html"
+                 hx-target="#area-animacion"
+                 hx-select="#caja-amarilla"
+                 class="btn">Amarillo</div>
+            <div hx-get="cajas.html"
+                 hx-target="#area-animacion"
+                 hx-select="#caja-roja"
+                 class="btn">Rojo</div>
+            <div hx-get="cajas.html"
+                 hx-target="#area-animacion"
+                 hx-select="#caja-azul"
+                 class="btn">Azul</div>
+        </header>
+        <main id="area-animacion">
+        </main>
+    </body>
+</html>

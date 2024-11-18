@@ -1,0 +1,14 @@
+<style>
+    .transicion:hover {
+        background-color: rgb(50, 50, 120);
+        cursor: pointer;
+        user-select: none;
+        transition: background-color 200ms ease-in;
+    }
+</style>
+<div id="destino"
+     class="transicion"
+     hx-get="."
+     hx-target="this"
+     hx-swap="delete swap:500ms"
+     hx-trigger="dblclick">✅ Formulario enviado</div>

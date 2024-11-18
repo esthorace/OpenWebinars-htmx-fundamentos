@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>OpenWebinars</title>
+        <!-- htmx -->
+        <script src="../../assets/htmx.min.js"></script>
+        <!-- Milligram -->
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic" />
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css" />
+        <style>
+            body {
+                margin: 1%;
+                text-align: center;
+            }
+
+            .negro {
+                background-color: black;
+                color: white;
+                transition: all 500ms ease;
+            }
+
+            .negro:hover {
+                background-color: skyblue;
+                color: black;
+            }
+
+            .azul {
+                background-color: deepskyblue;
+            }
+
+            .dorado {
+                background-color: gold;
+            }
+
+            .azul,
+            .dorado {
+                transition: all 500ms ease-in;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>CSS Transitions</h1>
+        <p class="negro">Transiciones con CSS puro</p>
+        <p class="azul" onclick="cambiarClase()">Transición con JavaScript</p>
+        <p class="azul"
+           hx-get="respuesta.html"
+           hx-target="#aqui"
+           hx-on:click="cambiarClase()">Transición con HTMX y hx-on</p>
+        <div id="aqui"></div>
+        <script>
+            function cambiarClase() {
+                const clase = event.target.classList;
+                clase.toggle("azul");
+                clase.toggle("dorado");
+            }
+        </script>
+    </body>
+</html>

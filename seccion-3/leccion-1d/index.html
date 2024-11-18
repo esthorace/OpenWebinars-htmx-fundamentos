@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>OpenWebinars</title>
+        <!-- htmx -->
+        <script src="../../assets/htmx.min.js"></script>
+        <!-- Milligram -->
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic" />
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css" />
+        <style>
+            body {
+                margin: 1%;
+                text-align: center;
+            }
+
+            .azul {
+                background-color: skyblue;
+                color: white
+            }
+
+            .htmx-swapping {
+                scale: 120%;
+                color: red;
+                transition: all 1s ease-in;
+            }
+
+            .htmx-settling {
+                scale: 100%;
+                transition: all 1s ease-in;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>CSS Transitions</h1>
+        <button hx-get="data.html"
+                hx-target="#destino"
+                hx-swap="afterbegin swap:1s settle:1s">afterbegin</button>
+        <div id="destino" class="azul">✨CONTENIDO INICIAL✨</div>
+    </body>
+</html>

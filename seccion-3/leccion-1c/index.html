@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>OpenWebinars</title>
+        <!-- htmx -->
+        <script src="../../assets/htmx.min.js"></script>
+        <!-- Milligram -->
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic" />
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css" />
+        <style>
+            body {
+                margin: 1%;
+                text-align: center;
+            }
+
+            .azul {
+                background: rgb(2, 0, 36);
+                color: white;
+                height: 200px;
+                scroll-behavior: smooth;
+                overflow-y: scroll;
+            }
+
+            .btn {
+                background-color: black;
+                color: white;
+                padding: 1em;
+                margin-inline: 25%;
+                margin-bottom: 1em;
+                cursor: pointer;
+                user-select: none;
+            }
+
+            .transicion {
+                rotate: 360deg;
+                transition: rotate ease-in 1s;
+            }
+
+            #destino.htmx-swapping {
+                opacity: 0;
+                transition: opacity ease-out 500ms;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>CSS Transitions</h1>
+        <form autocomplete="off">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" />
+            <label for="apellido">Apellido:</label>
+            <input type="text" name="apellido" />
+            <div class="btn"
+                 hx-get="data.html"
+                 hx-target="#destino"
+                 hx-swap="afterend"
+                 hx-trigger="click">Enviar</div>
+        </form>
+        <div class="azul">
+            <div id="destino"></div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>OpenWebinars</title>
+        <!-- htmx -->
+        <script src="../../assets/htmx.min.js"></script>
+        <!-- Milligram -->
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic" />
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body hx-boost="true">
+        <main class="menu">
+            <a href="pediatria.html" class="area" hx-swap="transition:true">
+                <div class="area-imagen"
+                     style="background-image: url('img/pediatria.webp')"></div>
+                <h1>Pediatría</h1>
+            </a>
+            <a href="geriatria.html" class="area" hx-swap="transition:true">
+                <div class="area-imagen"
+                     style="background-image: url('img/geriatria.webp')"></div>
+                <h1>Geriatría</h1>
+            </a>
+            <a href="laboratorio.html" class="area" hx-swap="transition:true">
+                <div class="area-imagen"
+                     style="background-image: url('img/laboratorio.webp')"></div>
+                <h1>Laboratorio</h1>
+            </a>
+            <a href="fisioterapia.html" class="area" hx-swap="transition:true">
+                <div class="area-imagen"
+                     style="background-image: url('img/fisioterapia.webp')"></div>
+                <h1>Fisioterapia</h1>
+            </a>
+        </main>
+    </body>
+</html>
